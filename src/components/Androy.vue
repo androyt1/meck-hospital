@@ -15,38 +15,36 @@
                 Call us on 08030433499
             </div>
        </header>
-       <div class="section-1">
-           <div class="box-header"><h3>Today</h3></div>
-            <div class="boxes">
-            <div class="box">
-                 <circle-progress :percent="40"  :is-gradient="true" :is-bg-shadow="true"  :gradient="{
-        angle: 90,
-        startColor: '#F0F0FF',
-        stopColor: '#1D2366'
-    }" />
-                 <h4>40</h4>
-                 <p>Lorem, ipsum dolor</p>
-            </div>
-             <div class="box">                 
-                  <circle-progress :percent="210"   :is-gradient="true" :is-bg-shadow="true" :gradient="{
-        angle: 90,
-        startColor: '#F0F0FF',
-        stopColor: '#1D2366'
-    }"/>
-                   <h4>210</h4>
-                 <p>Lorem, ipsum dolor</p>
-             </div>
-              <div class="box">
-                   <circle-progress :percent="120"  :is-gradient="true" :is-bg-shadow="true" :gradient="{
-        angle: 90,
-        startColor: '#F0F0FF',
-        stopColor: '#1D2366'
-    }" />
-                    <h4>120</h4>
-                 <p>Lorem, ipsum dolor</p>
-              </div>
+
+
+    <div class="section-box">
+        <div class="section-header">
+            <h3>Today</h3>
         </div>
-       </div>  
+        <div class="boxes">
+            <div class="box">
+                <div class="circle">
+                    <img src="https://img.icons8.com/dotty/80/000000/find-clinic.png"/>                  
+                </div>
+                  <h4>Lorem, ipsum dolor.</h4>
+                </div>
+            
+             <div class="box">
+                   <div class="circle">
+                       <img src="https://img.icons8.com/pastel-glyph/64/000000/letter-from-clinic.png"/>
+                   </div>
+                     <h4>Lorem, ipsum dolor.</h4>
+             </div>
+            <div class="box">
+                  <div class="circle"> 
+                      <img src="https://img.icons8.com/ios/50/000000/hospital-room--v2.png"/>
+                      </div>  
+                        <h4>Lorem, ipsum dolor.</h4>          
+        </div>
+    </div>
+
+    </div>
+       
        <div class="services-section">
            <div class="services-header">
                <h3>Services</h3>
@@ -146,20 +144,20 @@ header .content .left{
     }
 }
 header .content .left h1{
-    font-size:60px;
+    font-size:calc(2.5vw + 20px);
     text-align: left;  
      color:#1d2366da;
        margin-left: 0;
     padding-left:0 ;
 }
 header .content .left h1 span{
-    font-size:100px;
+    font-size:calc(3vw + 30px);
     margin-right: 0;
     padding-right:0 ;
     color:#6C63FF;
 }
 header .content .left h2{
-    font-size:40px;
+    font-size:calc(2vw + 20px);
     text-align: left;  
     color:#1d2366da;
     margin-bottom:20px ;
@@ -222,50 +220,97 @@ header .bottom{
     font-weight: 900;
 }
 
-.section-1{
-     width: 90%;
-     height: 60vh;
-     margin: 150px auto; 
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;  
-     background-color: #eeeef7;
-}
-.box-header{
+
+
+
+
+
+
+
+
+/* Services with box section */
+.section-box{
     width:100%;
-    height:10vh;
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;  
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:150px auto;   
 }
-.box-header h3{
+.section-box .section-header{
+    width:100%;
+    padding:10px;
+    background-color: #6C63FF;
+     padding-left: 150px;
+}
+.section-box .section-header h3{
     font-size: 35px;
-    color: #1D2366;
-    margin-left: 100px;
+    color:#fff;
+    text-align: left;
 }
-.boxes{
-    width: 90%;   
+.section-box .boxes{
+    width:100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;     
+    justify-content:space-around;
+    align-items: center;
+    padding:70px 0;
+    background-color: #EEEEF7;    
 }
-@media  screen and (max-width: 1100px){     
-    .boxes .box{
-        width: 50px;
-        height: 50px;
-    }
+@media screen and (max-width:800px){    
+   .section-box .boxes{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding:0 20px;
+   }
 }
-.boxes .box{
-    width: 300px;
-    height: 300px;
-    border-radius:20px;    
+.section-box .boxes .box{
+    width:25%;
+    height:40vh;  
+    background-color: #fff;    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;     
-     background-color:#fff;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow:3px 3px 3px #7a779b;
 }
+@media screen and (max-width:800px){    
+    .section-box .boxes .box{
+        width:100%;
+        margin-top: 50px;
+        margin-bottom:25px;
+    }
+}
+ .section-box .boxes .box .circle{
+     height:150px;
+     width:150px;   
+     border-radius: 50%;
+     background-color: #E1E0FF;
+     display: flex;
+     justify-content:center;
+     align-items: center;
+       box-shadow:3px 3px 3px #7a779b;
+ }   
+ .section-box .boxes .box h4{
+     margin-top: 20px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .services-section{
      width: 90%;    
      margin: 150px auto; 
@@ -291,7 +336,7 @@ header .bottom{
     height: 40vh;  
     display: flex;
     justify-content: space-evenly;
-    align-items: center;   
+    align-items: center;       
 }
 @media screen and (max-width:1100px) {
     .services-section{
@@ -311,6 +356,7 @@ header .bottom{
     align-items: center;
     padding: 10px 20px;
     border-radius: 20px;
+      box-shadow:3px 3px 3px #7a779b;
 }
 @media screen and (max-width:1100px) {
   .services-section .services .service{
@@ -323,6 +369,7 @@ header .bottom{
     background-color: #6b63ff33;
     border-radius: 50%;
     margin-right:15px;
+      box-shadow:3px 3px 3px #7a779b;
 }
 .services-section .services .service p{
     text-align:left;
@@ -342,9 +389,10 @@ header .bottom{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .section-cta .cta-text{
-    width:60%;
+    width:90%;
     height:60%;
     backdrop-filter: blur(5px);
      display: flex;
@@ -353,6 +401,8 @@ header .bottom{
     align-items: flex-start;
     background-color: #d5d5e95b;
     padding: 20px;
+      box-shadow:3px 3px 3px #7a779b;
+      border-radius: 20px;
 }
 @media screen and (max-width: 900px) {
     .section-cta .cta-text{
@@ -374,13 +424,14 @@ header .bottom{
 }
 .section-cta .cta-text button{
     font-size: 20px;
-    color: #1D2366;
+    color: #fff;
     width:70%;
-    padding:12px 20px; 
+    padding:15px 20px; 
     margin-top: 30px;
     border-radius: 10px;
     font-weight: bold;
     border: none;
+    background-color: #6C63FF;
 }
 .footer-section{
      width: 90%;
@@ -444,6 +495,7 @@ header .bottom{
 .bottom-text{
     padding:20px;
     font-size:20px;
-    color:#3E437C;
+    color:#fff;
+    background-color: #6C63FF;
 }
 </style>
